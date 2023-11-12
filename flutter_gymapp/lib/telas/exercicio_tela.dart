@@ -91,8 +91,24 @@ class ExercicioTela extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.orange,
       appBar: AppBar(
-          title: Text(
-              "${exercicioModelo.nome} - ${exercicioModelo.treino}")), //interpolação - melhor que concatenar
+          title: Column( children:[
+            Text(exercicioModelo.nome, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+            ),
+            Text(exercicioModelo.treino, style: const TextStyle(fontSize: 15),
+            ),
+          ]),
+          //configurando a appBar
+          centerTitle: true,//centralizando
+          backgroundColor: Color.fromARGB(255, 219, 134, 7),//alterando a cor
+          elevation: 0,//retirando a configurando de sombra
+          toolbarHeight:72,//almentando o tamanho
+          //arredondando as bordas
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(26),
+              ),
+            ),
+        ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
             print("FAB foi clicado");
