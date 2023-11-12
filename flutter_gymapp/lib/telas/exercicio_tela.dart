@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gymapp/_comum/cores.dart';
 import 'package:flutter_gymapp/modelos/evolucao_pesos.dart';
 import 'package:flutter_gymapp/modelos/exercicio_modelo.dart';
 import 'package:flutter_gymapp/modelos/observacao_anotacoes.dart';
@@ -99,7 +100,7 @@ class ExercicioTela extends StatelessWidget {
           ]),
           //configurando a appBar
           centerTitle: true,//centralizando
-          backgroundColor: Color.fromARGB(255, 219, 134, 7),//alterando a cor
+          backgroundColor: MinhasCores.laranja1,//alterando a cor
           elevation: 0,//retirando a configurando de sombra
           toolbarHeight:72,//almentando o tamanho
           //arredondando as bordas
