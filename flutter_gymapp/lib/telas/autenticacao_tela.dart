@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gymapp/_comum/cores.dart';
+import 'package:flutter_gymapp/_comum/snackbar.dart';
 import 'package:flutter_gymapp/componentes/decoracao_campo_autenticacao.dart';
 import 'package:flutter_gymapp/servicos/autenticacao_servico.dart';
 
@@ -179,7 +180,23 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
         print("cadastro validado");
         print(
             "${_emailController.text}, ${_senhaController}, ${_nomeController}");
-        _autenServico.cadastrarUsuario(nome: nome, senha: senha, email: email);
+        //verificando o resultado do teste do metodo.'.then(?String erro)'. Lógica para inplementação do Snackbar
+        _autenServico
+            .cadastrarUsuario(nome: nome, senha: senha, email: email)
+            .then(
+          (String? erro) {
+            if (erro != null) {
+              //voltou com erro
+              mostrarSnackbar(context: context, texto: erro);
+            } else {
+              //Deu certo. obs: para mostrar o teste em verde 'isErro: false'
+              mostrarSnackbar(
+                  context: context,
+                  texto: "Cadastro realizado com sucesso ;)",
+                  isErro: false);
+            }
+          },
+        );
       }
     } else {
       print("Form inválido");
