@@ -8,3 +8,7 @@ O metodo `toMap()` serve para retornar um `Map<String, dynamic>`. Neste caso o m
 
 # Pasta Servicos  
 * Pasta criada para gerir a comunicação com o firebase
+
+## Main
+* RoteadorTela  
+Uma stream é uma conexão que se faz, como um feature, mas que fica aberta, desta forma, ela fica mandando informações se uma coisa aconteceu ou não. Neste caso para o widget a stream que será monitorada é firebase_auth.userChanges (se houve alteração no estado do usuário)

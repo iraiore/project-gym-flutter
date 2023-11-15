@@ -176,8 +176,16 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
     if (_formKey.currentState!.validate()) {
       if (entrar) {
         print("Entrada validada");
+        _autenServico
+            .logarUsuarios(email: email, senha: senha)
+            .then((String? erro) {
+              if(erro != null){
+                mostrarSnackbar(context: context, texto: erro);
+              }
+          },
+        );
       } else {
-        print("cadastro validado");
+        print("Cadastro validado");
         print(
             "${_emailController.text}, ${_senhaController}, ${_nomeController}");
         //verificando o resultado do teste do metodo.'.then(?String erro)'. Lógica para inplementação do Snackbar

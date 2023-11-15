@@ -19,7 +19,7 @@ class AutenticacaoServico {
         password: senha,
       );
 
-      await userCredential.user!.updateDisplayName(nome);
+      await userCredential.user!.updateDisplayName(nome); //docs google
 
       return null;
     } on FirebaseAuthException catch (e) {
@@ -28,6 +28,22 @@ class AutenticacaoServico {
       }
       return "Erro desconhecido!";
     }
-//utilizando o nome
+  }
+
+  //metodo para logar o usuário
+  Future<String?> logarUsuarios(
+      {required String email, required String senha}) async {
+    try {
+      await _firebaseAuth.signInWithEmailAndPassword(
+          email: email, password: senha);
+      return null;
+    } on FirebaseAuthException catch (e) {
+      return e.message;
+    }
+  }
+
+  //deslogar o usuário
+  Future<void> deslogar() async {
+    return _firebaseAuth.signOut();
   }
 }
