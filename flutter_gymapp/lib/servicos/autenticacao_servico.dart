@@ -10,12 +10,20 @@ class AutenticacaoServico {
     required String senha,
     required String email,
   }) async {
-    UserCredential userCredential =
-        await _firebaseAuth.createUserWithEmailAndPassword(
-      email: email,
-      password: senha,
-    );
+    //usando o try cath para tratar o erro de email duplamente cadastrado
+    try {
+      UserCredential userCredential =
+          await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: senha,
+      );
 
-    await userCredential.user!.updateDisplayName(nome);//utilizando o nome
+      await userCredential.user!.updateDisplayName(nome);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "email-already-in-use") {
+        print("Email já cadastrado!");
+      }
+    }
+//utilizando o nome
   }
 }
