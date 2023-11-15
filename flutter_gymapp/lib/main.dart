@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gymapp/telas/autenticacao_tela.dart';
 import 'package:flutter_gymapp/telas/exercicio_tela.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); //único método
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -17,4 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

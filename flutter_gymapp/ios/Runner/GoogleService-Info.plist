@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAfg4s8Btsgej-cUISZhL8Riq1NhX1Dlfk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>11665541634</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>pedroiraiore.flutterGymapp</string>
+	<key>PROJECT_ID</key>
+	<string>flutter-gym-app-20038</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutter-gym-app-20038.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:11665541634:ios:01da2d91234fcbf389b51b</string>
+</dict>
+</plist>
